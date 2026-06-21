@@ -23,6 +23,53 @@
             justify-content: center;
             padding: 20px;
         }
+        .about {
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 60px; /* 👈 creates space between about + cards */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 20px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #38bdf8;
+}
+
+.about-text h2 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 140px;
+        height: 140px;
+    }
+}
 
         header {
             text-align: center;
@@ -189,14 +236,26 @@
     <p>SEO Specialist | Web Developer | Data Analytics Professional</p>
 </header>
     <section class="about">
-    <h2>About Me</h2>
-    <p>
-        I am an SEO Specialist, Web Developer, and Data Analytics Professional
-        with experience in website development, technical SEO, content
-        optimization, and data-driven decision making. I enjoy building digital
-        solutions, analyzing performance metrics, and helping businesses improve
-        their online visibility.
-    </p>
+    <div class="about-container">
+        
+        <!-- LEFT IMAGE -->
+        <div class="about-image">
+            <img src="Portfolio.jpeg" alt="Buyisiwe Vilakazi">
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am an SEO Specialist, Web Developer, and Data Analytics Professional
+                with experience in website development, technical SEO, content
+                optimization, and data-driven decision making. I enjoy building digital
+                solutions, analyzing performance metrics, and helping businesses improve
+                their online visibility.
+            </p>
+        </div>
+
+    </div>
 </section>
 
     <div class="card-container">
