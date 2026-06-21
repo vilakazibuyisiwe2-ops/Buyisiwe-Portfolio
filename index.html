@@ -1,5 +1,269 @@
 <!DOCTYPE html>
-<html>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css"
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <style>
+        /* Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Container for the 3 Cards */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            perspective: 1000px; /* Essential for 3D flip effect */
+        }
+
+        /* Flip Card Base structure */
+        .flip-card {
+            background-color: transparent;
+            height: 400px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Trigger the flip on hover */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back Sides */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Front Styling */
+        .card-front {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .card-front h2 {
+            font-size: 1.8rem;
+            margin-top: 15px;
+            color: #f1f5f9;
+        }
+        
+        .card-front .icon {
+            font-size: 4rem;
+            color: #38bdf8;
+        }
+        
+        .card-front .hint {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Back Styling */
+        .card-back {
+            background: #1e293b;
+            transform: rotateY(180deg);
+            justify-content: flex-start;
+            text-align: left;
+            overflow-y: auto;
+        }
+
+        .card-back h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+            width: 100%;
+        }
+
+        /* List Items inside Back Card */
+        .card-back ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .card-back li {
+            margin-bottom: 15px;
+        }
+
+        .card-back a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .card-back a:hover {
+            text-decoration: underline;
+            color: #7dd3fc;
+        }
+
+        .card-back p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .info-text {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .info-text strong {
+            color: #38bdf8;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>A fusion of technical skills, writing, and hands-on craftsmanship</p>
+    </header>
+
+    <div class="card-container">
+
+        <!-- CARD 1: MEDIUM BLOGS -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="card-front">
+                    <div class="icon">✍️</div>
+                    <h2>Medium Blogs</h2>
+                    <div class="hint">Hover to Flip</div>
+                </div>
+                <div class="card-back">
+                    <h3>My Publications</h3>
+                    <ul>
+                        <li>
+                            <!-- REPLACE THE URL AND TITLE BELOW WITH YOUR ACTUAL MEDIUM LINK -->
+                            <a href="https://medium.com" target="_blank">Latest Article Title 1 →</a>
+                            <p>A brief summary of what this article talks about. You can change this text easily.</p>
+                        </li>
+                        <li>
+                            <a href="https://medium.com" target="_blank">Latest Article Title 2 →</a>
+                            <p>A short sentence explaining your thoughts or tech insights shared in this piece.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2: GITHUB REPOS -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="card-front">
+                    <div class="icon">💻</div>
+                    <h2>GitHub Repos</h2>
+                    <div class="hint">Hover to Flip</div>
+                </div>
+                <div class="card-back">
+                    <h3>Websites & Projects</h3>
+                    <ul>
+                        <li>
+                            <!-- REPLACE THE URL AND PROJECT NAME BELOW WITH YOUR GITHUB CODE OR LIVE LINK -->
+                            <a href="https://github.com" target="_blank">Project Name One →</a>
+                            <p>Built using HTML, CSS, and JS. Responsive design hosted directly on GitHub Pages.</p>
+                        </li>
+                        <li>
+                            <a href="https://github.com" target="_blank">Project Name Two →</a>
+                            <p>A web application showcase demonstrating functional programming and interactive UI layouts.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3: MY INFORMATION -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="card-front">
+                    <div class="icon">⚙️</div>
+                    <h2>My Information</h2>
+                    <div class="hint">Hover to Flip</div>
+                </div>
+                <div class="card-back">
+                    <h3>Get In Touch</h3>
+                    <p class="info-text">
+                        I bridge two worlds: I am a <strong>Qualified Boilermaker</strong> with heavy industrial expertise, alongside an extensive background in tech development and technical writing. 
+                    </p>
+                    <p class="info-text">
+                        <strong>Email:</strong> your.email@example.com<br>
+                        <strong>Location:</strong> South Africa<br>
+                        <strong>LinkedIn:</strong> ://linkedin.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
 </html>
